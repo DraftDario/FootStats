@@ -22,7 +22,7 @@ public class main extends AppCompatActivity {
 
         //test nbMatchs
         TextView tv = (TextView) findViewById(R.id.matchs);
-        tv.setText("hello world");
+        tv.setText("Nombre de matchs joués: " + this.calculate());
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -56,8 +56,8 @@ public class main extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public String calculate(){
-        String res = "TEST";
+    public Integer calculate(){
+        Integer res = 3+2;
         return res;
     }
 }
