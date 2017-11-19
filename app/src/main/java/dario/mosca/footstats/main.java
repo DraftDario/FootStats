@@ -8,15 +8,21 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class main extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        //test nbMatchs
+        TextView tv = (TextView) findViewById(R.id.matchs);
+        tv.setText("hello world");
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -50,7 +56,8 @@ public class main extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public int calculate(){
-        return 2+3;
+    public String calculate(){
+        String res = "TEST";
+        return res;
     }
 }
