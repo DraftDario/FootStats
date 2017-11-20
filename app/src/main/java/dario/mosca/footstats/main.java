@@ -20,9 +20,13 @@ public class main extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //test nbMatchs
-        TextView tv = (TextView) findViewById(R.id.matchs);
-        tv.setText("Nombre de matchs joués: " + this.calculate());
+        //nbMatchs
+        TextView nbMatchs = (TextView) findViewById(R.id.time);
+        nbMatchs.setText("Nombre de matchs joués : " + business.calculateMatchs());
+
+        //gameTime
+        TextView gameTime = (TextView) findViewById(R.id.matchs);
+        gameTime.setText("Temps de jeu : " + business.calculateTime() + " min.");
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -54,10 +58,5 @@ public class main extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    public Integer calculate(){
-        Integer res = 3+2;
-        return res;
     }
 }
