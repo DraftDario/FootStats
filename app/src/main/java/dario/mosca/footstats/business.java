@@ -2,11 +2,13 @@ package dario.mosca.footstats;
 
 import org.jetbrains.annotations.Contract;
 
+import java.io.Serializable;
+
 /**
  * Created by mosca on 20.11.2017.
  */
 
-public class business {
+public class business implements Serializable {
 
     @org.jetbrains.annotations.Contract(pure = true)
     public static Integer calculateMatchs(){
