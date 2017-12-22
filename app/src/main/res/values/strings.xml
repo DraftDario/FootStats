@@ -5,4 +5,5 @@
     <string name="action_wait">En création...</string>
     <string name="main_title">Gardez le contrôle de vos performances grâce à cette application.
     Après chaque match, renseignez les informations pour vous évaluer.</string>
+    <string name="new_match">Nouveau match</string>
 </resources>

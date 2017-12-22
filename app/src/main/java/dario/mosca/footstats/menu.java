@@ -8,7 +8,7 @@ import java.io.Serializable;
  * Created by mosca on 20.11.2017.
  */
 
-public class business implements Serializable {
+public class menu implements Serializable {
 
     @org.jetbrains.annotations.Contract(pure = true)
     public static Integer calculateMatchs(){

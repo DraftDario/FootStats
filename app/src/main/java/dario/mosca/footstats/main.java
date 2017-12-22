@@ -1,5 +1,6 @@
 package dario.mosca.footstats;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -28,34 +29,36 @@ public class main extends AppCompatActivity {
 
         //nbMatchs
         TextView nbMatchs = (TextView) findViewById(R.id.matchs);
-        nbMatchs.setText(NB_MATCHS + business.calculateMatchs());
+        nbMatchs.setText(NB_MATCHS + menu.calculateMatchs());
 
         //gameTime
         TextView gameTime = (TextView) findViewById(R.id.time);
-        gameTime.setText(GAME_TIME + business.calculateTime() + " min.");
+        gameTime.setText(GAME_TIME + menu.calculateTime() + " min.");
 
         //goals
         TextView goals = (TextView) findViewById(R.id.goals);
-        goals.setText(GOALS + business.goals());
+        goals.setText(GOALS + menu.goals());
 
         //passes
         TextView passes = (TextView) findViewById(R.id.passes);
-        passes.setText(PASSES + business.passes());
+        passes.setText(PASSES + menu.passes());
 
         //yellowCards
         TextView yellow = (TextView) findViewById(R.id.yellow);
-        yellow.setText(YELLOW_CARDS + business.yellowCards());
+        yellow.setText(YELLOW_CARDS + menu.yellowCards());
 
         //redCards
         TextView red = (TextView) findViewById(R.id.red);
-        red.setText(RED_CARDS + business.redCards());
+        red.setText(RED_CARDS + menu.redCards());
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Bientôt, tu pourras ajouter un match", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                /*Snackbar.make(view, "Bientôt, tu pourras ajouter un match", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();*/
+                Intent intent = new Intent(main.this, newMatch.class);
+                startActivity(intent);
             }
         });
     }
