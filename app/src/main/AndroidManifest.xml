@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".main"
+            android:name=".presentation.activity.mainActivity"
             android:label="@string/menu_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -19,7 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".newMatch"
+        <activity android:name=".presentation.fragment.NewMatchFragment"
             android:label="@string/new_match"/>
     </application>
 
