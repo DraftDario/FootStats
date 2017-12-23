@@ -2,6 +2,7 @@ package dario.mosca.footstats.presentation.activity;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -29,20 +30,6 @@ public class mainActivity extends AppCompatActivity {
         // Fragment par défaut
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.fragmentContent, new MenuFragment()).commit();
-
-        //FIXME: Tu peux la bouger sur le layout de fragment_menu si tu veux qu'elle ne soit que sur le menu. Penses aussi à bouger le fab dans le content_main.xml
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //Snackbar.make(view, "Bientôt, tu pourras ajouter un match", Snackbar.LENGTH_LONG).setAction("Action", null).show();
-
-                //TODO: Si tu boucge ça dans une navView, tu doit toujours veiller a passer une instance du fragment. Go singleton.
-                FragmentManager fragmentManager = getSupportFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.fragmentContent, new NewMatchFragment()).commit();
-            }
-        });
-
     }
 
     @Override
@@ -65,5 +52,11 @@ public class mainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void fragmentLoader(Fragment frag){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.fragmentContent, frag).commit();
+
     }
 }

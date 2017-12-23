@@ -1,7 +1,10 @@
 package dario.mosca.footstats.presentation.fragment;
 
+import android.app.Activity;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,10 +20,15 @@ import dario.mosca.footstats.utils.Const;
 
 public class MenuFragment extends Fragment {
 
+    private Activity mainActivity;
+
     public MenuFragment() {
 
     }
 
+    public void register(Activity activity){
+        mainActivity = activity;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -51,6 +59,17 @@ public class MenuFragment extends Fragment {
         //redCards
         TextView red = (TextView) view.findViewById(R.id.red);
         red.setText(Const.RED_CARDS + menu.redCards());
+
+        //FIXME: Tu peux la bouger sur le layout de fragment_menu si tu veux qu'elle ne soit que sur le menu. Penses aussi à bouger le fab dans le content_main.xml
+        FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.fab2);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                //TODO: Callback sur mainActivity pour changer le fragment
+
+            }
+        });
 
         return view;
     }
