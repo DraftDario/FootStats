@@ -9,7 +9,7 @@
     android:layout_marginTop="5dp"
     android:background="@android:color/transparent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="dario.mosca.footstats.presentation.activity.mainActivity"
+    tools:context="dario.mosca.footstats.presentation.activity.MainActivity"
     tools:showIn="@layout/activity_main">
 
     <FrameLayout
