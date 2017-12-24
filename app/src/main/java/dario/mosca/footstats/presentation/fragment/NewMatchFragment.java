@@ -7,12 +7,37 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import dario.mosca.footstats.R;
+import dario.mosca.footstats.presentation.activity.MainActivity;
 
 /**
  * Created by mosca on 22.12.2017.
  */
 
-public class NewMatchFragment extends Fragment {
+public class NewMatchFragment extends Fragment implements CallbackFragment {
+
+    // Requis par l'interface.
+    private MainActivity mainActivity;
+
+    @Override
+    public void registerForCallback(MainActivity activity) {
+        mainActivity = activity;
+    }
+
+    /**
+     * Constructeur vide requis par le fragmentManager.
+     */
+    public NewMatchFragment() {
+    }
+
+    // SINGLETON
+    private static NewMatchFragment instance = null;
+
+    public static NewMatchFragment getInstance() {
+        if (instance == null) {
+            instance = new NewMatchFragment();
+        }
+        return instance;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -22,6 +47,7 @@ public class NewMatchFragment extends Fragment {
 
         return view;
     }
+
 
 }
 

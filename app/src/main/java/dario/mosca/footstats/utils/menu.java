@@ -1,4 +1,4 @@
-package dario.mosca.footstats;
+package dario.mosca.footstats.utils;
 
 import org.jetbrains.annotations.Contract;
 
