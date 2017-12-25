@@ -17,24 +17,16 @@ import dario.mosca.footstats.utils.menu;
  * Created by d-a-d on 22.12.2017.
  */
 
-public class MenuFragment extends Fragment implements CallbackFragment {
+public class MenuFragment extends Fragment {
 
-    // Requis par l'interface.
-    private MainActivity mainActivity;
-
-    @Override
-    public void registerForCallback(MainActivity activity) {
-        mainActivity = activity;
-    }
+    // SINGLETON
+    private static MenuFragment instance = null;
 
     /**
      * Constructeur vide requis par le fragmentManager.
      */
     public MenuFragment() {
     }
-
-    // SINGLETON
-    private static MenuFragment instance = null;
 
     public static MenuFragment getInstance() {
         if (instance == null) {
@@ -78,7 +70,7 @@ public class MenuFragment extends Fragment implements CallbackFragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mainActivity.loadFragment(NewMatchFragment.getInstance());
+                ((MainActivity) getActivity()).loadFragment(NewMatchFragment.getInstance());
             }
         });
 

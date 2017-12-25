@@ -10,7 +10,6 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import dario.mosca.footstats.R;
-import dario.mosca.footstats.presentation.fragment.CallbackFragment;
 import dario.mosca.footstats.presentation.fragment.MenuFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -87,12 +86,6 @@ public class MainActivity extends AppCompatActivity {
 
             // On met a jour le fragment courrant.
             currentFragment = newFragmentInstance;
-        }
-
-        // Si le fragment à besoin de faire des callbacks, on lui renseigne l'activité.
-        if (newFragmentInstance instanceof CallbackFragment) {
-            // La on enregistre l'activité si elle en a besoin.
-            ((CallbackFragment) newFragmentInstance).registerForCallback(this);
         }
     }
 
